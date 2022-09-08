@@ -1,5 +1,5 @@
 from django.contrib import admin
-from first.models import Post
+from first.models import Post,  Comment
 
 # admin.site.register(Post)
 
@@ -17,3 +17,10 @@ class PostAdmin(admin.ModelAdmin):
 # This will not work
 
 # Register your models here.
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email', 'post', 'created', 'active')
+    list_filter = ('active', 'created', 'updated')
+    search_fields = ('name', 'email', 'body')
+
