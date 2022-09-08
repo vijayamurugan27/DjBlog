@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.sitemaps',
     'first.apps.FirstConfig',
+    'taggit',
 ]
 
 MIDDLEWARE = [
@@ -135,3 +136,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 django_heroku.settings(locals())
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'vijayamurugan27@gmail.com'
+EMAIL_HOST_PASSWORD = 'Savitha27*'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
